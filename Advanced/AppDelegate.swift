@@ -21,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //连接创建数据库
         print("ss".docDir())
         //SQLiteManager.shareManager().openDB("db", withTable: "t_temperature")
+        
+        UINavigationBar.appearance().tintColor = UIColor.blackColor()
         return true
     }
 

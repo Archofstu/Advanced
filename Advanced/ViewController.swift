@@ -50,7 +50,14 @@ class ViewController: UIViewController {
         hud.mode = .Text
         hud.labelText = "用户名或密码错误！"
         hud.hide(true, afterDelay: 2)
-        
+
+    }
+    
+    func showProcessing(){
+        let hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
+        hud.mode = .DeterminateHorizontalBar
+        hud.labelText = "test for MBP"
+        hud.hide(true, afterDelay: 5)
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {

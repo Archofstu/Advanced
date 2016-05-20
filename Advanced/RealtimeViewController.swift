@@ -12,10 +12,11 @@ import Charts
 class RealtimeViewController: UIViewController {
     var lineChart:LineChartView?
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let lineChart = ChartDrawer.shareDrawer().drawLineChart(inView: view, withXvalues: ["test"], yValues: [21.2])
+        let lineChart = ChartDrawer.shareDrawer().drawLineChart(inView: view, withXvalues: ["first"], yValues: [20.0])
         
         self.lineChart = lineChart
         let timer = NSTimer(timeInterval: 1.0, target: self, selector: #selector(realtimeRefresh), userInfo: nil, repeats: true)

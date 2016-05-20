@@ -77,9 +77,12 @@ class ExperimentViewController: UIViewController{
 //        SQLiteManager.shareManager().openDB("db", withTable: tableName)
 //        
 //        for i in 0...20 {
+//            if i % 100 == 0 {
+//                print("-----\(i)-------")
+//            }
 //            let time = now.dateByAddingTimeInterval(Double(i) * 3600.0)
 //            let timeStr = dateFormatter.stringFromDate(time)
-//            let dic:[String:AnyObject] = ["temperatureNum" : Double(Double(arc4random() % 10) + 20.8), "time" : timeStr]
+//            let dic:[String:AnyObject] = ["temperatureNum" : Double(Double(arc4random() % 5) + 20.8), "time" : timeStr]
 //            let temperature = Temperature(dic: dic)
 //            temperature.insert(tableName)
 //        }
