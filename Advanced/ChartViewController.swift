@@ -18,9 +18,10 @@ class ChartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         lineChart = ChartDrawer.shareDrawer().drawLineChart(inView: view, withXvalues: xValues!, yValues: yValues!)
-        lineChart?.setVisibleXRangeMaximum(CGFloat(20))
+        //lineChart?.setVisibleXRangeMaximum(CGFloat(20))
+        
         // Do any additional setup after loading the view.
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "保存", style: .Plain, target: self, action: #selector(tryToSave))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .Plain, target: self, action: #selector(tryToSave))
         
         title = "Record"
         
@@ -36,5 +37,35 @@ class ChartViewController: UIViewController {
         alert.addAction(yesAction)
         presentViewController(alert, animated: true, completion: nil)
     }
+    
+    @IBAction func simplify(sender: AnyObject) {
+        let count = lineChart?.data?.dataSets[0].entryCount
+        if count! > 3000{
+            //let data = lineChart!.lineData
+            var clearIndex = [Int]()
+            for i in 0..<count! {
+                if i % 2 == 1{
+//                    let value = data!.dataSets[0].entryForIndex(i)!.value
+//                    if abs((value - temp)/value) < 1 {
+//                        temp = value
+//                        print(i)
+//                    }
+//                    print(i)
+                    clearIndex.append(i)
+                }
+            }
+
+            print(lineChart?.data?.dataSets[0].entryCount)
+            for j in 0..<clearIndex.count {
+                //print(clearIndex[j])
+                lineChart!.data!.dataSets[0].removeEntry(xIndex: clearIndex[j])
+            }
+            //print(lineChart?.data?.dataSets[0].entryCount)
+            lineChart?.notifyDataSetChanged()
+            //simplify(sender)
+        }
+    }
+
+
 
 }

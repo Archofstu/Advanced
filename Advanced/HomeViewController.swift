@@ -22,8 +22,8 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view.
         idLabel.text = String(UserAccount.readAccount()!.id)
         usernameLabel.text = UserAccount.readAccount()!.username
-        userIsOn.image = UIImage(named: "sign-check-icon")
-        machineIsOn.image = UIImage(named: "sign-error-icon")
+        userIsOn.image = UIImage(named: "sign-error-icon")
+        machineIsOn.image = UIImage(named: "sign-check-icon")
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: menuButton)
         title = "HOME"

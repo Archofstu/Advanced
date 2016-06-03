@@ -65,11 +65,11 @@ class ChartDrawer: NSObject{
         return lineChart
     }
         
-    func refreshNewChart(lineChart:LineChartView, index:Int){
+    func refreshNewChart(lineChart:LineChartView, index:Int, time:String){
         let value = Double(arc4random() % 5) + 20.0
         let entry = ChartDataEntry(value: value, xIndex: index)
         lineChart.lineData!.dataSets[0].addEntry(entry)
-        lineChart.lineData?.addXValue("xx")
+        lineChart.lineData?.addXValue(time)
         //随着点数增加自动调整视图
         lineChart.autoScaleMinMaxEnabled = true
         lineChart.setVisibleXRangeMaximum(CGFloat(20))
