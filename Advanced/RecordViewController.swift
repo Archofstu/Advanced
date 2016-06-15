@@ -19,6 +19,7 @@ class RecordViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = "记录列表"
         tableNames = Temperature.readTableNames()
         //取消多余的cell显示
         tableView.tableFooterView = UIView(frame: CGRectZero)

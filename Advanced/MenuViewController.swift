@@ -10,7 +10,7 @@ import UIKit
 
 class MenuViewController: UITableViewController {
     
-    let options = ["实验","查看记录","退出账号"]
+    let options = ["实验", "样品信息", "查看记录", "退出账号"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,14 +82,20 @@ class MenuViewController: UITableViewController {
                 let naviVC = UINavigationController(rootViewController: experimentVC)
                 presentViewController(naviVC, animated: true, completion: nil)
                 break
-            //查看记录
+            //样品信息
             case 1:
+                slideMenuController()?.closeLeft()
+                let sampleVC = storyboard?.instantiateViewControllerWithIdentifier("sample") as! SampleViewController
+                (slideMenuController()?.mainViewController as! UINavigationController).pushViewController(sampleVC, animated: true)
+                break
+            //查看记录
+            case 2:
                 slideMenuController()?.closeLeft()
                 let recordVC = storyboard?.instantiateViewControllerWithIdentifier("record") as! RecordViewController
                 (slideMenuController()?.mainViewController as! UINavigationController).pushViewController(recordVC, animated: true)
                 break
             //"退出账号"
-            case 2:
+            case 3:
                 dismissViewControllerAnimated(true, completion: nil)
                 break
             default:

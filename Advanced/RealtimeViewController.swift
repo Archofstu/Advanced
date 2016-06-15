@@ -14,17 +14,22 @@ class RealtimeViewController: UIViewController {
     
     var timeFormmater : NSDateFormatter = {
         let timeFormatter = NSDateFormatter()
-        timeFormatter.dateFormat = "HH:mm:ss"
+        timeFormatter.dateFormat = "yy-MM-dd HH:mm"
         return timeFormatter
     }()
     
     ///采样间隔时间
     var timeInterval:Double?
+    ///实验保存表名
+    var experimentTableName : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let lineChart = ChartDrawer.shareDrawer().drawLineChart(inView: view, withXvalues: ["first"], yValues: [20.0])
+        let tableCreateTime = timeFormmater.stringFromDate(NSDate())
+        experimentTableName = "Temperature \(tableCreateTime)"
+        SQLiteManager.shareManager().openDB("db", withTable: "Temperature \(tableCreateTime)")
         
         self.lineChart = lineChart
         let timer = NSTimer(timeInterval: timeInterval!, target: self, selector: #selector(realtimeRefresh), userInfo: nil, repeats: true)
@@ -37,7 +42,11 @@ class RealtimeViewController: UIViewController {
     func realtimeRefresh(){
         let now = NSDate()
         let timeStr = timeFormmater.stringFromDate(now)
-        ChartDrawer.shareDrawer().refreshNewChart(lineChart!, index: index, time: timeStr)
+        let value = Double(arc4random() % 5) + 20.0
+        ChartDrawer.shareDrawer().refreshNewChart(lineChart!, index: index, time: timeStr, value: value)
+        let dic = ["temperatureNum":value, "time":timeStr]
+        let temperature = Temperature(dic: dic as! [String : AnyObject])
+        temperature.insert(experimentTableName!)
         index += 1
     }
 

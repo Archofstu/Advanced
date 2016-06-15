@@ -26,7 +26,7 @@ class HomeViewController: UIViewController {
         machineIsOn.image = UIImage(named: "sign-check-icon")
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: menuButton)
-        title = "HOME"
+        title = "主页"
     }
         
     lazy var menuButton : UIButton = {

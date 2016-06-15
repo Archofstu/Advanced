@@ -34,6 +34,7 @@ class ChartDrawer: NSObject{
         //设置边框
         lineChart.drawBordersEnabled = true
         
+        
         var chartDataEntries = [ChartDataEntry]()
         for i in 0...yValues.count - 1{
             let dataEntry = ChartDataEntry(value: Double(yValues[i]), xIndex: i)
@@ -62,11 +63,11 @@ class ChartDrawer: NSObject{
             make.trailing.equalTo(lineChart.superview!.snp_trailing).offset(-10)
         }
         
+        lineChart.setVisibleXRangeMaximum(CGFloat(20))
         return lineChart
     }
         
-    func refreshNewChart(lineChart:LineChartView, index:Int, time:String){
-        let value = Double(arc4random() % 5) + 20.0
+    func refreshNewChart(lineChart:LineChartView, index:Int, time:String, value:Double){
         let entry = ChartDataEntry(value: value, xIndex: index)
         lineChart.lineData!.dataSets[0].addEntry(entry)
         lineChart.lineData?.addXValue(time)

@@ -9,12 +9,14 @@
 import UIKit
 import Alamofire
 import MBProgressHUD
+import SnapKit
 
 class ExperimentViewController: UIViewController{
 
     @IBOutlet weak var experimentItemTF: UITextField!
     @IBOutlet weak var timeTF: UITextField!
     @IBOutlet weak var frequencyTF: UITextField!
+    @IBOutlet weak var expectTemperTF: UITextField!
     
     lazy var dateFormatter : NSDateFormatter = {
         let format = NSDateFormatter()
@@ -23,7 +25,7 @@ class ExperimentViewController: UIViewController{
     }()
     
     ///实验项目
-    let experimentItems = ["Temperature", "Rainfall", "Other"]
+    let experimentItems = ["读取温度", "读取雨量", "温度控制", "其他"]
     let frequencyItems = [1, 30, 60, 1800, 3600]
     
     override func viewDidLoad() {
@@ -156,6 +158,24 @@ extension ExperimentViewController: UIPickerViewDelegate, UIPickerViewDataSource
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView.tag == 1 {
             experimentItemTF.text = experimentItems[row]
+            expectTemperTF.hidden = !(row == 2)
+//            if row == 2 {
+//                let exceptTemperTF = UITextField()
+//                exceptTemperTF.borderStyle = .RoundedRect
+//                view.addSubview(exceptTemperTF)
+//                
+//                exceptTemperTF.snp_makeConstraints(closure: { (make) in
+//                    make.leading.equalTo(experimentItemTF.snp_trailing).offset(10)
+//                    make.centerY.equalTo(experimentItemTF.snp_centerY)
+//                    make.width.equalTo(100)
+//                    make.height.equalTo(30)
+//                })
+//                
+//                view.layoutIfNeeded()
+//                print(exceptTemperTF)
+//                expectTemperTF.hidden = false
+//            }
+            
         }
         else{
             frequencyTF.text = String(frequencyItems[row])

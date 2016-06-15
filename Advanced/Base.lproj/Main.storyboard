@@ -264,7 +264,7 @@
                                     <constraint firstAttribute="width" constant="107" id="Rl3-cJ-6ZE"/>
                                     <constraint firstAttribute="height" constant="30" id="xlV-mF-pRB"/>
                                 </constraints>
-                                <state key="normal" title="获取整体曲线"/>
+                                <state key="normal" title="查看整体曲线"/>
                                 <connections>
                                     <action selector="simplify:" destination="x6M-wD-zWh" eventType="touchUpInside" id="cVj-WK-CVi"/>
                                 </connections>
@@ -276,6 +276,9 @@
                             <constraint firstItem="AuV-Tx-cZV" firstAttribute="top" secondItem="wdQ-q8-bUX" secondAttribute="bottom" constant="8" id="b9e-Xa-YGa"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="simplyBtn" destination="wdQ-q8-bUX" id="Zhe-Cn-aTH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s34-eO-XeC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -349,7 +352,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ITx-cr-mWd">
-                                <rect key="frame" x="277" y="291" width="46" height="30"/>
+                                <rect key="frame" x="277" y="331" width="46" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="46" id="dMN-db-vFm"/>
                                     <constraint firstAttribute="height" constant="30" id="ziF-o6-Y9c"/>
@@ -362,23 +365,35 @@
                                     <action selector="goExperiment:" destination="26H-dE-esG" eventType="touchUpInside" id="ns6-YR-CvR"/>
                                 </connections>
                             </button>
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="预期温度值" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ySN-eI-PTU">
+                                <rect key="frame" x="225" y="295" width="150" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="WH3-E8-obi"/>
+                                    <constraint firstAttribute="height" constant="30" id="aIt-qF-DtO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="6a8-Xe-e7J" firstAttribute="centerX" secondItem="k82-di-sXJ" secondAttribute="centerX" id="38E-Sr-eDX"/>
                             <constraint firstItem="wCX-xw-esj" firstAttribute="centerX" secondItem="k82-di-sXJ" secondAttribute="centerX" id="MfG-bP-4fF"/>
                             <constraint firstItem="wSK-Wg-i9X" firstAttribute="centerX" secondItem="k82-di-sXJ" secondAttribute="centerX" id="OYf-gV-wsg"/>
+                            <constraint firstItem="ySN-eI-PTU" firstAttribute="centerX" secondItem="k82-di-sXJ" secondAttribute="centerX" id="Quo-xV-j6U"/>
                             <constraint firstItem="wCX-xw-esj" firstAttribute="top" secondItem="8zt-OJ-RPt" secondAttribute="bottom" constant="20" id="Srh-rT-hPa"/>
                             <constraint firstItem="wSK-Wg-i9X" firstAttribute="top" secondItem="6a8-Xe-e7J" secondAttribute="bottom" constant="20" id="Utm-1r-Iby"/>
                             <constraint firstItem="6a8-Xe-e7J" firstAttribute="top" secondItem="wCX-xw-esj" secondAttribute="bottom" constant="20" id="b5a-u3-ZTD"/>
                             <constraint firstItem="ITx-cr-mWd" firstAttribute="centerX" secondItem="k82-di-sXJ" secondAttribute="centerX" id="gJo-lI-LU3"/>
                             <constraint firstItem="8zt-OJ-RPt" firstAttribute="top" secondItem="m11-PC-EAF" secondAttribute="bottom" constant="65" id="nDE-Wi-xoh"/>
                             <constraint firstItem="8zt-OJ-RPt" firstAttribute="leading" secondItem="k82-di-sXJ" secondAttribute="leadingMargin" constant="30" id="p8y-Ir-igm"/>
+                            <constraint firstItem="ySN-eI-PTU" firstAttribute="top" secondItem="wSK-Wg-i9X" secondAttribute="bottom" constant="20" id="rv1-RP-mPP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8zt-OJ-RPt" secondAttribute="trailing" constant="30" id="uTg-4W-FgY"/>
-                            <constraint firstItem="ITx-cr-mWd" firstAttribute="top" secondItem="wSK-Wg-i9X" secondAttribute="bottom" constant="16" id="vJw-dO-47e"/>
+                            <constraint firstItem="ITx-cr-mWd" firstAttribute="top" secondItem="wSK-Wg-i9X" secondAttribute="bottom" constant="56" id="vJw-dO-47e"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="expectTemperTF" destination="ySN-eI-PTU" id="dqr-UE-kdL"/>
                         <outlet property="experimentItemTF" destination="wCX-xw-esj" id="EE6-k2-Tn8"/>
                         <outlet property="frequencyTF" destination="wSK-Wg-i9X" id="Wwk-mn-kgJ"/>
                         <outlet property="timeTF" destination="6a8-Xe-e7J" id="zOy-EA-vYg"/>
@@ -387,6 +402,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FIK-6N-6eV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1783" y="1189"/>
+        </scene>
+        <!--Sample View Controller-->
+        <scene sceneID="J5r-Pz-Z3d">
+            <objects>
+                <viewController storyboardIdentifier="sample" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AoJ-uC-DQn" customClass="SampleViewController" customModule="Advanced" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZKa-Zk-Chm"/>
+                        <viewControllerLayoutGuide type="bottom" id="UN4-fg-PTq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Djb-T5-oBm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="样品名称" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2wa-De-5nz">
+                                <rect key="frame" x="30" y="65" width="540" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="K4s-5i-sLN">
+                                <rect key="frame" x="30" y="120" width="540" height="250"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="GZK-lJ-VRn"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="K4s-5i-sLN" firstAttribute="top" secondItem="2wa-De-5nz" secondAttribute="bottom" constant="25" id="FHk-Uk-Ads"/>
+                            <constraint firstAttribute="trailing" secondItem="2wa-De-5nz" secondAttribute="trailing" constant="30" id="OqA-c0-STB"/>
+                            <constraint firstItem="K4s-5i-sLN" firstAttribute="width" secondItem="2wa-De-5nz" secondAttribute="width" id="X67-wh-0Jj"/>
+                            <constraint firstItem="K4s-5i-sLN" firstAttribute="centerX" secondItem="Djb-T5-oBm" secondAttribute="centerX" id="ln4-PR-hia"/>
+                            <constraint firstItem="2wa-De-5nz" firstAttribute="top" secondItem="ZKa-Zk-Chm" secondAttribute="bottom" constant="45" id="pKj-xa-7fn"/>
+                            <constraint firstItem="2wa-De-5nz" firstAttribute="centerX" secondItem="Djb-T5-oBm" secondAttribute="centerX" id="q4P-oR-tVi"/>
+                            <constraint firstItem="2wa-De-5nz" firstAttribute="leading" secondItem="Djb-T5-oBm" secondAttribute="leading" constant="30" id="xll-Mb-zhj"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b2Z-G7-ntk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1793" y="1930"/>
         </scene>
         <!--Container View Controller-->
         <scene sceneID="LAa-Xj-xt8">
