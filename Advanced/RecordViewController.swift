@@ -10,17 +10,14 @@ import UIKit
 
 class RecordViewController: UITableViewController {
 
-    var tableNames : [String]?{
-        didSet{
-            tableView.reloadData()
-        }
-    }
+    var tableNames : [String]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         title = "记录列表"
         tableNames = Temperature.readTableNames()
+        tableView.reloadData()
         //取消多余的cell显示
         tableView.tableFooterView = UIView(frame: CGRectZero)
     }
@@ -43,6 +40,7 @@ class RecordViewController: UITableViewController {
         return cell!
     }
     
+    //MARK: - table view delegate
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let temps = Temperature.readRecord(tableNames![indexPath.row])
         var xValues = [String]()
@@ -55,6 +53,20 @@ class RecordViewController: UITableViewController {
         chartVC.xValues = xValues
         chartVC.yValues = yValues
         navigationController?.pushViewController(chartVC, animated: true)
-        
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            let alert = UIAlertController(title: "警告", message: "确认删除该记录？", preferredStyle: .ActionSheet)
+            let action0 = UIAlertAction(title: "取消", style: .Cancel, handler: nil)
+            let action1 = UIAlertAction(title: "确认", style: .Default, handler: { (_) in
+                Temperature.deleteTable(self.tableNames![indexPath.row])
+                self.tableNames!.removeAtIndex(indexPath.row)
+                self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            })
+            alert.addAction(action0)
+            alert.addAction(action1)
+            presentViewController(alert, animated: true, completion: nil)
+        }
     }
 }

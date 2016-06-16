@@ -44,7 +44,7 @@ class ExperimentViewController: UIViewController{
         
         timeTF.inputView = timePickerView
         
-        frequencyTF.inputView = frequencyPickerView
+        frequencyTF.keyboardType = UIKeyboardType.NumbersAndPunctuation
     }
     
     ///实验项目选择器
@@ -88,8 +88,15 @@ class ExperimentViewController: UIViewController{
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    ///判断输入是否是DOUBLE类型
+    func isDouble(str:String) -> Bool{
+        let scanner = NSScanner(string: str)
+        var value = 0.0
+        return scanner.scanDouble(&value) && scanner.atEnd
+    }
+    
     @IBAction func goExperiment(sender: AnyObject) {
-        if experimentItemTF.text == "" || timeTF.text == "" || frequencyTF == ""{
+        if experimentItemTF.text == "" || timeTF.text == "" || frequencyTF == "" || !isDouble(frequencyTF.text!){
             let hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
             hud.mode = .Text
             hud.labelText = "输入参数有误!"

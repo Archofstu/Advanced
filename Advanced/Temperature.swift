@@ -58,6 +58,13 @@ class Temperature: NSObject {
         return tableName
     }
     
+    ///删除表
+    class func deleteTable(tableName: String) -> Bool{
+        let sql = "DROP TABLE IF EXISTS \"\(tableName)\""
+        
+        return SQLiteManager.shareManager().db.executeUpdate(sql, withArgumentsInArray: nil)
+    }
+    
     
     
 }

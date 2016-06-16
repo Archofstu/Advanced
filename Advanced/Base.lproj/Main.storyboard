@@ -128,7 +128,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8O1-JS-iXp">
-                                <rect key="frame" x="144" y="141" width="312" height="320"/>
+                                <rect key="frame" x="176" y="141" width="249" height="322"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="用户ID:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Os-8i-Nwc">
                                         <rect key="frame" x="31" y="41" width="64" height="21"/>
@@ -142,14 +142,14 @@
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="仪器是否在实验状态中:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blv-Ys-oxb">
-                                        <rect key="frame" x="31" y="166" width="175" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="仪器是否实验中:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blv-Ys-oxb">
+                                        <rect key="frame" x="31" y="166" width="124" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="用户是否在实验状态中：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uPQ-Dy-HfR">
-                                        <rect key="frame" x="31" y="123" width="187" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="用户是否实验中：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uPQ-Dy-HfR">
+                                        <rect key="frame" x="31" y="123" width="136" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -161,10 +161,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rKF-tA-txu">
-                                        <rect key="frame" x="219" y="116" width="35" height="35"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qeR-Ow-TbI">
-                                        <rect key="frame" x="219" y="159" width="35" height="35"/>
+                                        <rect key="frame" x="175" y="116" width="35" height="35"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S2X-VA-bMy">
                                         <rect key="frame" x="103" y="82" width="42" height="21"/>
@@ -172,11 +169,14 @@
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qeR-Ow-TbI">
+                                        <rect key="frame" x="175" y="159" width="35" height="35"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="312" id="7ms-Fk-fPG"/>
-                                    <constraint firstAttribute="height" constant="320" id="Ufl-Hq-tv1"/>
+                                    <constraint firstAttribute="width" constant="249" id="7ms-Fk-fPG"/>
+                                    <constraint firstAttribute="height" constant="322" id="Ufl-Hq-tv1"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -186,7 +186,7 @@
                             <constraint firstItem="IRT-vh-IUx" firstAttribute="top" secondItem="US8-Ja-i6z" secondAttribute="top" id="5w5-T1-Nwu"/>
                             <constraint firstItem="IRT-vh-IUx" firstAttribute="leading" secondItem="US8-Ja-i6z" secondAttribute="leading" id="RKw-LE-Xqo"/>
                             <constraint firstItem="8O1-JS-iXp" firstAttribute="centerX" secondItem="US8-Ja-i6z" secondAttribute="centerX" id="RtK-ch-IY1"/>
-                            <constraint firstItem="8O1-JS-iXp" firstAttribute="centerY" secondItem="US8-Ja-i6z" secondAttribute="centerY" constant="1" id="bQF-Uj-OBN"/>
+                            <constraint firstItem="8O1-JS-iXp" firstAttribute="centerY" secondItem="US8-Ja-i6z" secondAttribute="centerY" constant="2" id="bQF-Uj-OBN"/>
                             <constraint firstAttribute="trailing" secondItem="IRT-vh-IUx" secondAttribute="trailing" id="yYP-9R-FuV"/>
                         </constraints>
                     </view>
@@ -314,7 +314,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" editable="NO" text="开始新实验前，请选择具体项目与时间：" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8zt-OJ-RPt">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" editable="NO" text="开始新实验前，请进行基本配置:" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8zt-OJ-RPt">
                                 <rect key="frame" x="50" y="85" width="500" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -333,7 +333,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="时间" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="6a8-Xe-e7J">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="结束时间" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="6a8-Xe-e7J">
                                 <rect key="frame" x="225" y="195" width="150" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="jnA-9Z-5AH"/>
@@ -342,7 +342,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="频率" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wSK-Wg-i9X">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="采样时间间隔(秒)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wSK-Wg-i9X">
                                 <rect key="frame" x="225" y="245" width="150" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="lKb-wT-t5S"/>
@@ -372,7 +372,7 @@
                                     <constraint firstAttribute="height" constant="30" id="aIt-qF-DtO"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
